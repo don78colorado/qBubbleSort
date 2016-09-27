@@ -4,6 +4,7 @@
 #include <QString>
 #include <QTextStream>
 #include <algorithm>
+#include <QStringList>
 
 static QTextStream cout(stdout);
 
@@ -54,6 +55,9 @@ int main(int argc, char *argv[])
     QList<int> staticList, staticListCopy, randomList, randomListCopy;
     staticList << 5 << 10 << 60 << 2 << 1243 << 2343 << 12 << 2354 << 6654 << 23 << 1;
 
+    QStringList stringList;
+    stringList << "Billy" << "James" << "Herman" << "dog" << "cat" << "zebra" << "horse" << "Peter" << "Sam" << "piano";
+    QStringList stringListCopy(stringList);
     cout << "staticList: ";
     print(staticList.begin(), staticList.end());
     using namespace std;
@@ -92,6 +96,24 @@ int main(int argc, char *argv[])
     staticList==staticListCopy ? cout << "staticList==staticListCopy\n" : cout << "staticList!=staticListCopy\n";
     randomList==randomListCopy ? cout << "randomList==randomListCopy\n" : cout << "randomList!=randomListCopy\n";
 
+
+    cout << "\n\n\nstringList: ";
+    print(stringList.begin(), stringList.end());
+
+    cout << "calling bubbleSort on stringList\n";
+    bubbleSort(stringList.begin(), stringList.end());
+
+    cout << "stringListCopy: ";
+    print(stringListCopy.begin(), stringListCopy.end());
+    cout << "stringList: ";
+    print(stringList.begin(), stringList.end());
+
+    cout << "calling qSort on stringListCopy\n";
+    qSort(stringListCopy.begin(), stringListCopy.end());
+    cout << "stringListCopy: ";
+    print(stringListCopy.begin(), stringListCopy.end());
+
+    stringList==stringListCopy ? cout << "stringList==stringListCopy\n" : cout << "stringList!=stringListCopy\n";
     cout.flush();
     return a.exec();
 }
