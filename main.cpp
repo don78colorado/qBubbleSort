@@ -59,16 +59,19 @@ int main(int argc, char *argv[])
     using namespace std;
 
     cout << "staticListCopy: ";
-    copy(staticList.begin(), staticList.end(), back_insert_iterator<QList<int>>(staticListCopy));
+    copy(staticList.begin(), staticList.end(), back_insert_iterator< QList<int> >(staticListCopy));
     print(staticListCopy.begin(), staticListCopy.end());
 
-    generate_n(back_insert_iterator<QList<int>>(randomList),
+    /*generate_n(back_insert_iterator< QList<int> >(randomList),
                randomListLength, []() { return rand()%(maxRandomNumber+1); });
+               */
+    for(int i = 0; i < randomListLength; i++)
+        randomList.append(rand()%(maxRandomNumber+1));
     cout << "randomList: ";
     print(randomList.begin(), randomList.end());
 
     cout << "randomListCopy: ";
-    copy(randomList.begin(), randomList.end(), back_insert_iterator<QList<int>>(randomListCopy));
+    copy(randomList.begin(), randomList.end(), back_insert_iterator< QList<int> >(randomListCopy));
     print(randomListCopy.begin(), randomListCopy.end());
 
     bubbleSort(staticList.begin(), staticList.end());
