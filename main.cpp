@@ -5,6 +5,7 @@
 #include <QTextStream>
 #include <QStringList>
 #include "bubblesort.h"
+#include "bubblesorttest.h"
 
 static QTextStream cout(stdout);
 
@@ -22,6 +23,10 @@ void print(InputIterator begin, InputIterator end)
 
 int main(int argc, char *argv[])
 {
+    TestBubbleSort t;
+    QTest::qExec(&t);
+
+#if 0
     QCoreApplication a(argc, argv);
 
     const int randomListLength = 10;
@@ -92,4 +97,5 @@ int main(int argc, char *argv[])
     stringList==stringListCopy ? cout << "stringList==stringListCopy\n" : cout << "stringList!=stringListCopy\n";
     cout.flush();
     return a.exec();
+#endif
 }

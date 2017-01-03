@@ -1,6 +1,10 @@
-#include <QtTest/QTest>
+#ifndef BUBBLESORTTEST_H
+#define BUBBLESORTTEST_H
 
-class MyFirstTest: public QObject
+#include <QtTest/QtTest>
+#include "bubblesort.h"
+
+class TestBubbleSort: public QObject
 {
     Q_OBJECT
 private slots:
@@ -13,3 +17,5 @@ private slots:
     void cleanupTestCase()
     { qDebug("called after myFirstTest and mySecondTest"); }
 };
+
+#endif // BUBBLESORTTEST_H

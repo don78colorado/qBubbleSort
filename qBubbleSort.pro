@@ -1,16 +1,15 @@
-QT += core
 QT -= gui
+QT += testlib
+CONFIG += c++11
 
-CONFIG += c++11 testlib
-
-TARGET = qBubbleSort
 CONFIG += console
 CONFIG -= app_bundle
 
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    bubblesorttest.cpp
+    test/mergesorttest.cpp
 
 HEADERS += \
-    bubblesort.h
+    bubblesort.h \
+    bubblesorttest.h
