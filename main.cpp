@@ -6,6 +6,7 @@
 #include <QStringList>
 #include "bubblesort.h"
 #include "bubblesorttest.h"
+#include "time.h"
 
 static QTextStream cout(stdout);
 
