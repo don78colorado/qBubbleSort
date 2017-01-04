@@ -8,7 +8,8 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    test/mergesorttest.cpp
+    test/mergesorttest.cpp \
+    test/bubblesorttest.cpp
 
 HEADERS += \
     bubblesort.h \
